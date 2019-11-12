@@ -73,7 +73,7 @@ class Menu
             0 => array(
                 '<a href="' . site_url() . '"><i class="menu-icon icon-home"></i>Beranda</a>',
                 '<a href="' . site_url('message') . '"><i class="menu-icon icon-comments"></i>Pesan <span class="menu-count-new-msg"></span></a>',
-                '<a href="' . site_url('siswa/jadwal_mapel') . '"><i class="menu-icon icon-tasks"></i>Jadwal Matapelajaran</a>'
+                '<a href="' . site_url('siswa/jadwal_mapel') . '"><i class="menu-icon icon-tasks"></i>Jadwal Mata Kuliah</a>'
             ),
             1 => array(
                 '<a href="' . site_url('tugas?clear_filter=true') . '"><i class="menu-icon icon-tasks"></i>Tugas </a>',

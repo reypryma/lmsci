@@ -24,7 +24,7 @@
             <th>Mapel <span class="text-error">*</span></th>
             <td>
                 <select name="mapel_kelas_id" style="width:auto" id="mapel_kelas_id">
-                    <option value="">Pilih Matapelajaran</option>
+                    <option value="">Pilih Mata Kuliah</option>
                     {% if get_post_data('kelas_id') is not empty %}
                         {% set post_kelas_id = get_post_data('kelas_id') %}
                         {% set mapel_kelas = get_row_data('mapel_model', 'retrieve_all_kelas', [null, post_kelas_id]) %}

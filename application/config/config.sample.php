@@ -35,9 +35,9 @@ $config['sess_cookie_name'] = 'ci_session';
  * Ini untuk keperluan demo aplikasi, jika true ada beberapa fungsi akan didisable seperti :
  * - update pengaturan
  * - email template
- * - manajemen matapelajaran
+ * - manajemen Mata Kuliah
  * - manajemen kelas
- * - matapelajaran kelas
+ * - Mata Kuliah kelas
  * - edit profil admin
  */
 $config['is_demo_app'] = false;

@@ -82,7 +82,7 @@ class Setup extends CI_Controller
                     redirect('setup/index/1');
                 }
 
-                $check = $this->config_model->retrieve('nama-sekolah');
+                $check = $this->config_model->retrieve('nama-universitas');
                 if (empty($check)) {
                     redirect('setup/index/2');
                 }
@@ -159,7 +159,7 @@ class Setup extends CI_Controller
                     redirect('setup/index/1');
                 }
 
-                $check = $this->config_model->retrieve('nama-sekolah');
+                $check = $this->config_model->retrieve('nama-universitas');
                 if (empty($check)) {
                     redirect('setup/index/2');
                 }
@@ -220,7 +220,7 @@ class Setup extends CI_Controller
                     redirect('setup/index/1');
                 }
 
-                $check = $this->config_model->retrieve('nama-sekolah');
+                $check = $this->config_model->retrieve('nama-universitas');
                 if (!empty($check)) {
                     redirect('setup/index/3');
                 }

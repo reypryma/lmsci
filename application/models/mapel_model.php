@@ -9,7 +9,7 @@
 class Mapel_model extends CI_Model
 {
     /**
-     * Method untuk mendapatkan jumlah matapelajaran kelas yang aktif
+     * Method untuk mendapatkan jumlah Mata Kuliah kelas yang aktif
      * @return integer
      * @since  1.8
      * @author Almazari <almazary@gmail.com>

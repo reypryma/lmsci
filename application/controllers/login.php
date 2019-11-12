@@ -287,7 +287,7 @@ class Login extends MY_Controller
                     # kirim email registrasi
                     @kirim_email('email-template-register-siswa', $username, array(
                         'nama'         => $nama,
-                        'nama_sekolah' => get_pengaturan('nama-sekolah', 'value')
+                        'nama_sekolah' => get_pengaturan('nama-universitas', 'value')
                     ));
 
                     $pesan = "Registrasi sebagai siswa berhasil, tunggu pengaktifan akun oleh admin.";
@@ -354,7 +354,7 @@ class Login extends MY_Controller
                     # kirim email registrasi
                     @kirim_email('email-template-register-pengajar', $username, array(
                         'nama'         => $nama,
-                        'nama_sekolah' => get_pengaturan('nama-sekolah', 'value')
+                        'nama_sekolah' => get_pengaturan('nama-universitas', 'value')
                     ));
 
                     $pesan = "Registrasi sebagai pengajar berhasil, tunggu pengaktifan akun oleh admin.";

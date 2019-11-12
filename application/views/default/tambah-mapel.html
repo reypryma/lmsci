@@ -1,13 +1,13 @@
 {% extends "layout-private.html" %}
 
 {% block title %}
-Manajemen Matapelajaran - {{ parent() }}
+Manajemen Mata Kuliah - {{ parent() }}
 {% endblock %}
 
 {% block content %}
 <div class="module">
     <div class="module-head">
-        <h3>{{ anchor('mapel', 'Manajemen Matapelajaran')|raw }} / Tambah</h3>
+        <h3>{{ anchor('mapel', 'Manajemen Mata Kuliah')|raw }} / Tambah</h3>
     </div>
     <div class="module-body">
         {{ get_flashdata('mapel')|raw }}

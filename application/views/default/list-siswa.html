@@ -87,15 +87,17 @@ Data Siswa - {{ parent() }}
                     <tr>
                         <th valign="top">Update Status Terpilih</th>
                         <td valign="top">
-                            <select name="status_id" style="width:100%;">
-                                <option>--Pilih Status--</option>
-                                <option value="1">Aktif</option>
-                                {% if status_id == 0 %}
-                                <option value="2">Blocking</option>
-                                {% elseif status_id == 2 %}
-                                <option value="3">Alumni</option>
-                                {% endif %}
-                            </select>
+                            <label>
+                                <select name="status_id" style="width:100%;">
+                                    <option>--Pilih Status--</option>
+                                    <option value="1">Aktif</option>
+                                    {% if status_id == 0 %}
+                                    <option value="2">Blocking</option>
+                                    {% elseif status_id == 2 %}
+                                    <option value="3">Alumni</option>
+                                    {% endif %}
+                                </select>
+                            </label>
                         </td>
                         <td valign="top">
                             <button type="submit" class="btn">Update</button>

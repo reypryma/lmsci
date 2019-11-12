@@ -330,7 +330,7 @@ class MY_Controller extends CI_Controller
     }
 
     /**
-     * Method untuk mendapatkan jawal matapelajaran untuk siswa
+     * Method untuk mendapatkan jawal Mata Kuliah untuk siswa
      *
      * @param  integer $siswa_id
      * @return array

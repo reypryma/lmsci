@@ -59,7 +59,7 @@ class Tugas extends MY_Controller
             $val['tugas_kelas'][] = $kelas;
         }
 
-        # cari matapelajarannya
+        # cari Mata Kuliahnya
         $val['mapel'] = $this->mapel_model->retrieve($val['mapel_id']);
 
         # type label

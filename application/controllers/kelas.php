@@ -166,7 +166,7 @@ class Kelas extends MY_Controller
                     default:
                         $return .= '<div class="panel-heading">
                             '.$s['nama'].'&nbsp;&nbsp;'.(($s['aktif'] == 0) ? '<span class="label label-warning">Kelas tidak aktif</span>' : '').'
-                            '.(($s['aktif'] == 1) ? '<a href="'.site_url('kelas/mapel_kelas/add/'.$p['id'].'/'.$s['id'].'/'.enurl_redirect(current_url())).'" class="btn btn-primary pull-right" style="margin-top:-5px;"><i class="icon-wrench"></i> Atur Matapelajaran</a>' : '').'
+                            '.(($s['aktif'] == 1) ? '<a href="'.site_url('kelas/mapel_kelas/add/'.$p['id'].'/'.$s['id'].'/'.enurl_redirect(current_url())).'" class="btn btn-primary pull-right" style="margin-top:-5px;"><i class="icon-wrench"></i> Atur Mata Kuliah</a>' : '').'
                         </div>';
                         if ($s['aktif'] == 1) {
                             $return .= '<div class="panel-body">';
@@ -192,12 +192,12 @@ class Kelas extends MY_Controller
                                         $return .= '</div>
                                         <b>
                                         '.$m['nama'].'
-                                        '.(($v['aktif'] == 0) ? '<span class="text-error"><i class="icon-info-sign"></i> Matapelajaran Kelas tidak aktif' : '').'
+                                        '.(($v['aktif'] == 0) ? '<span class="text-error"><i class="icon-info-sign"></i> Mata Kuliah Kelas tidak aktif' : '').'
                                         </b>
 
                                         <div id="modal-'.$v['id'].'" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-header">
-                                                <h3 id="myModalLabel">Anda yakin ingin menghapus Matapelajaran Kelas ini?</h3>
+                                                <h3 id="myModalLabel">Anda yakin ingin menghapus Mata Kuliah Kelas ini?</h3>
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Batal</button>
@@ -260,7 +260,7 @@ class Kelas extends MY_Controller
                     $this->mapel_model->update_kelas($mapel_kelas_id, $mapel_kelas['kelas_id'], $mapel_kelas['mapel_id'], 1);
                 }
 
-                $this->session->set_flashdata('edit-mapel-kelas-'.$kelas['id'], get_alert('success', 'Matapelajaran kelas berhasil diaktifkan.'));
+                $this->session->set_flashdata('edit-mapel-kelas-'.$kelas['id'], get_alert('success', 'Mata Kuliah kelas berhasil diaktifkan.'));
                 redirect($uri_back);
             break;
 
@@ -294,7 +294,7 @@ class Kelas extends MY_Controller
                     $this->mapel_model->delete_kelas($mapel_kelas_id);
                 }
 
-                $this->session->set_flashdata('edit-mapel-kelas-'.$kelas['id'], get_alert('warning', 'Matapelajaran kelas berhasil dihapus.'));
+                $this->session->set_flashdata('edit-mapel-kelas-'.$kelas['id'], get_alert('warning', 'Mata Kuliah kelas berhasil dihapus.'));
                 redirect($uri_back);
             break;
 
@@ -325,11 +325,11 @@ class Kelas extends MY_Controller
                 $data['kelas']  = $kelas;
                 $data['parent'] = $parent;
 
-                # ambil semua matapelajaran
+                # ambil semua Mata Kuliah
                 $retrieve_all   = $this->mapel_model->retrieve_all_mapel();
                 $data['mapels'] = $retrieve_all;
 
-                # ambil matapelajaran pada kelas ini
+                # ambil Mata Kuliah pada kelas ini
                 $retrieve_all_kelas = $this->mapel_model->retrieve_all_kelas();
                 $mapel_kelas_id = array();
                 foreach ($retrieve_all_kelas as $v) {
@@ -343,7 +343,7 @@ class Kelas extends MY_Controller
                         $info = $this->input->post('info', TRUE);
                         $this->mapel_model->create($nama, $info);
 
-                        $this->session->set_flashdata('mapel', get_alert('success', 'Matapelajaran baru berhasil ditambah.'));
+                        $this->session->set_flashdata('mapel', get_alert('success', 'Mata Kuliah baru berhasil ditambah.'));
                         redirect('kelas/mapel_kelas/add/'.$parent_id.'/'.$kelas_id.'/'.enurl_redirect($uri_back));
                     }
                     $data['post_mapel'] = 1;
@@ -382,7 +382,7 @@ class Kelas extends MY_Controller
                         }
                     }
 
-                    $this->session->set_flashdata('mapel', get_alert('success', 'Matapelajaran kelas berhasil disimpan.'));
+                    $this->session->set_flashdata('mapel', get_alert('success', 'Mata Kuliah kelas berhasil disimpan.'));
                     redirect('kelas/mapel_kelas/add/'.$parent_id.'/'.$kelas_id.'/'.enurl_redirect($uri_back));
                 }
             break;

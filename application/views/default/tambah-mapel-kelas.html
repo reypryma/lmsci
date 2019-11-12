@@ -1,13 +1,13 @@
 {% extends "layout-private.html" %}
 
 {% block title %}
-Matapelajaran Kelas - {{ parent() }}
+Mata Kuliah Kelas - {{ parent() }}
 {% endblock %}
 
 {% block content %}
 <div class="module">
     <div class="module-head">
-        <h3>{{ anchor(uri_back, 'Matapelajaran Kelas')|raw }} / Atur Matapelajaran</h3>
+        <h3>{{ anchor(uri_back, 'Mata Kuliah Kelas')|raw }} / Atur Mata Kuliah</h3>
     </div>
     <div class="module-body">
         {{ get_flashdata('mapel')|raw }}
@@ -17,8 +17,8 @@ Matapelajaran Kelas - {{ parent() }}
         {% endif %}
 
         <div class="bs-callout bs-callout-info">
-            <b><a class="as-link pull-right" data-toggle="collapse" data-target="#form-add-mapel">Tambah Matapelajaran</a></b>
-            Pilih Matapelajaran yang ingin dimasukkan pada <b>{{ kelas['nama'] }}</b>
+            <b><a class="as-link pull-right" data-toggle="collapse" data-target="#form-add-mapel">Tambah Mata Kuliah</a></b>
+            Pilih Mata Kuliah yang ingin dimasukkan pada <b>{{ kelas['nama'] }}</b>
 
             <div id="form-add-mapel" {% if post_mapel == 0 %} class="collapse" {% endif %}>
                 {% if is_demo_app() == false %}

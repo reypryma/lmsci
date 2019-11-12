@@ -99,7 +99,7 @@ function default_parser_item($add_item = array())
 
     # cek proses install tidak
     if ($CI->uri->segment(1) != 'setup') {
-        $return['copyright'] = 'Copyright &copy; 2018 - ' . date('Y') . ' ' . get_pengaturan('nama-sekolah', 'value');
+        $return['copyright'] = 'Copyright &copy; 2018 - ' . date('Y') . ' ' . get_pengaturan('nama-universitas', 'value');
         $return['site_name'] = 'e-Learning management';
         $return['version']   = '<a href="#">versi ' . get_pengaturan('versi', 'value') . '</a>';
 
@@ -935,7 +935,7 @@ function kirim_email($nama_email, $to, $array_data = array())
     $email_subject = str_replace($arr_old, $arr_new, $template['subject']);
     $email_body    = str_replace($arr_old, $arr_new, $template['body']);
     $email_server  = get_pengaturan('email-server', 'value');
-    $nama_sekolah  = get_pengaturan('nama-sekolah', 'value');
+    $nama_sekolah  = get_pengaturan('nama-universitas', 'value');
 
     $CI =& get_instance();
     $CI->email->clear(true);
@@ -1008,7 +1008,7 @@ function kirim_email_approve_siswa($siswa_id)
 
     @kirim_email('email-template-approve-siswa', $login['username'], array(
         'nama'         => $nama,
-        'nama_sekolah' => get_pengaturan('nama-sekolah', 'value'),
+        'nama_sekolah' => get_pengaturan('nama-universitas', 'value'),
         'tabel_profil' => $tabel_profil,
         'url_login'    => site_url('login')
     ));
@@ -1053,7 +1053,7 @@ function kirim_email_approve_pengajar($pengajar_id)
 
     @kirim_email('email-template-approve-pengajar', $login['username'], array(
         'nama'         => $nama,
-        'nama_sekolah' => get_pengaturan('nama-sekolah', 'value'),
+        'nama_sekolah' => get_pengaturan('nama-universitas', 'value'),
         'tabel_profil' => $tabel_profil,
         'url_login'    => site_url('login')
     ));

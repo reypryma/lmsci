@@ -1,13 +1,13 @@
 {% extends "layout-private.html" %}
 
 {% block title %}
-Manajemen Matapelajaran - {{ parent() }}
+Manajemen Mata Kuliah - {{ parent() }}
 {% endblock %}
 
 {% block content %}
 <div class="module">
     <div class="module-head">
-        <h3>Manajemen Matapelajaran</h3>
+        <h3>Manajemen Mata Kuliah</h3>
     </div>
     <div class="module-body">
         {{ get_flashdata('mapel')|raw }}
@@ -16,22 +16,22 @@ Manajemen Matapelajaran - {{ parent() }}
             {{ get_alert('warning', get_demo_msg())|raw }}
         {% endif %}
 
-        <div class="row-fluid">
+<!--        <div class="row-fluid">
             <div class="span2">
-                <a href="{{ site_url('mapel/add') }}" class="btn btn-primary">Tambah Mapel</a>
+                <a href="{{ site_url('mapel/add/') }}" class="btn btn-primary">Tambah Mapel</a>
             </div>
             <div class="span10">
-                Atur matapelajaran yang ada di sekolah<br>
-                <b>Note: </b> Matapelajaran tidak dapat dihapus namun dapat di ubah menjadi tidak aktif
+                Atur Mata Kuliah yang ada di Universitas<br>
+                <b>Note: </b> Mata Kuliah tidak dapat dihapus namun dapat di ubah menjadi tidak aktif
             </div>
-        </div>
+        </div>-->
 
         <br>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th width="5%">No</th>
-                    <th>Matapelajaran</th>
+                    <th>Mata Kuliah</th>
                     <th>Aktif</th>
                     <th width="15%"></th>
                 </tr>
@@ -52,7 +52,9 @@ Manajemen Matapelajaran - {{ parent() }}
                         {% endif %}
                     </td>
                     <td>
+<!--
                         <a class="btn btn-default" href="{{ site_url('mapel/edit/' ~ v.id ~ '/' ~ enurl_redirect(current_url())) }}"><i class="icon-edit"></i> Edit</a>
+-->
                     </td>
                 </tr>
                 {% endfor %}

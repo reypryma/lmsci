@@ -68,7 +68,7 @@ class Materi extends MY_Controller
             $val['materi_kelas'][] = $kelas;
         }
 
-        # cari matapelajarannya
+        # cari Mata Kuliahnya
         $val['mapel'] = $this->mapel_model->retrieve($val['mapel_id']);
 
         # hitung jumlah komentar

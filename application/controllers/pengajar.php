@@ -589,7 +589,7 @@ class Pengajar extends MY_Controller
                 $mapel_kelas_id
             );
 
-            $this->session->set_flashdata('add', get_alert('success', 'Jadwal Matapelajaran berhasil disimpan.'));
+            $this->session->set_flashdata('add', get_alert('success', 'Jadwal Mata Kuliah berhasil disimpan.'));
             redirect('pengajar/add_ampuan/'.$status_id.'/'.$pengajar_id.'/'.$hari_id);
         }
 

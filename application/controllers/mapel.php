@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Class untuk resource Matapelajaran
+ * Class untuk resource Mata Kuliah
  *
  * @package   e-Learning Dokumenary Net
  * @author    Almazari <almazary@gmail.com>
@@ -66,7 +66,7 @@ class Mapel extends MY_Controller
             $info = $this->input->post('info', TRUE);
             $this->mapel_model->create($nama, $info);
 
-            $this->session->set_flashdata('mapel', get_alert('success', 'Matapelajaran baru berhasil disimpan.'));
+            $this->session->set_flashdata('mapel', get_alert('success', 'Mata Kuliah baru berhasil disimpan.'));
             redirect('mapel/index');
         }
 
@@ -103,7 +103,7 @@ class Mapel extends MY_Controller
 
             $this->mapel_model->update($id, $nama, $info, $aktif);
 
-            $this->session->set_flashdata('mapel', get_alert('success', 'Matapelajaran berhasil di perbaharui.'));
+            $this->session->set_flashdata('mapel', get_alert('success', 'Mata Kuliah berhasil di perbaharui.'));
             redirect($uri_back);
         }
 

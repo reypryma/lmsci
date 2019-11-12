@@ -7,7 +7,7 @@ $config['setup/index/2'] = array(
         'rules' => 'required|trim|xss_clean'
     ),
     array(
-        'field' => 'nama-sekolah',
+        'field' => 'nama-universitas',
         'label' => 'Nama sekolah',
         'rules' => 'required|trim|xss_clean'
     ),
@@ -177,7 +177,7 @@ $config['register/pengajar'] = array(
 
 $config['pengaturan'] = array(
     array(
-        'field' => 'nama-sekolah',
+        'field' => 'nama-universitas',
         'label' => 'Nama sekolah',
         'rules' => 'required|trim|xss_clean'
     ),
@@ -217,12 +217,12 @@ $config['login'] = array(
 $config['mapel/add'] = array(
     array(
         'field' => 'nama',
-        'label' => 'Nama Matapelajaran',
+        'label' => 'Nama Mata Kuliah',
         'rules' => 'required|trim|xss_clean|min_length[2]'
     ),
     array(
         'field' => 'info',
-        'label' => 'Info Matapelajaran',
+        'label' => 'Info Mata Kuliah',
         'rules' => 'trim'
     )
 );
@@ -230,12 +230,12 @@ $config['mapel/add'] = array(
 $config['mapel/edit'] = array(
     array(
         'field' => 'nama',
-        'label' => 'Nama Matapelajaran',
+        'label' => 'Nama Mata Kuliah',
         'rules' => 'required|trim|xss_clean|min_length[2]'
     ),
     array(
         'field' => 'info',
-        'label' => 'Info Matapelajaran',
+        'label' => 'Info Mata Kuliah',
         'rules' => 'trim'
     ),
     array(
@@ -682,7 +682,7 @@ $config['pengajar/ampuan'] = array(
     ),
     array(
         'field' => 'mapel_kelas_id',
-        'label' => 'Matapelajaran',
+        'label' => 'Mata pelajaran',
         'rules' => 'required|trim|xss_clean|numeric'
     ),
     array(
@@ -758,7 +758,7 @@ $config['pengajar/filter'] = array(
 $config['materi/add/tertulis'] = array(
     array(
         'field' => 'mapel_id',
-        'label' => 'Matapelajaran',
+        'label' => 'Mata Kuliah',
         'rules' => 'required|trim|xss_clean|numeric'
     ),
     array(
@@ -781,7 +781,7 @@ $config['materi/add/tertulis'] = array(
 $config['materi/add/file'] = array(
     array(
         'field' => 'mapel_id',
-        'label' => 'Matapelajaran',
+        'label' => 'Mata Kuliah',
         'rules' => 'required|trim|xss_clean|numeric'
     ),
     array(
@@ -799,7 +799,7 @@ $config['materi/add/file'] = array(
 $config['materi/edit/tertulis'] = array(
     array(
         'field' => 'mapel_id',
-        'label' => 'Matapelajaran',
+        'label' => 'Mata Kuliah',
         'rules' => 'required|trim|xss_clean|numeric'
     ),
     array(
@@ -827,7 +827,7 @@ $config['materi/edit/tertulis'] = array(
 $config['materi/edit/file'] = array(
     array(
         'field' => 'mapel_id',
-        'label' => 'Matapelajaran',
+        'label' => 'Mata Kuliah',
         'rules' => 'required|trim|xss_clean|numeric'
     ),
     array(
@@ -850,7 +850,7 @@ $config['materi/edit/file'] = array(
 $config['tugas/add_ganda_essay'] = array(
     array(
         'field' => 'mapel_id',
-        'label' => 'Matapelajaran',
+        'label' => 'Mata Kuliah',
         'rules' => 'required|trim|xss_clean|numeric'
     ),
     array(
@@ -878,7 +878,7 @@ $config['tugas/add_ganda_essay'] = array(
 $config['tugas/add_upload'] = array(
     array(
         'field' => 'mapel_id',
-        'label' => 'Matapelajaran',
+        'label' => 'Mata Kuliah',
         'rules' => 'required|trim|xss_clean|numeric'
     ),
     array(
@@ -950,7 +950,7 @@ $config['materi/filter'] = array(
     ),
     array(
         'field' => 'mapel_id[]',
-        'label' => 'Matapelajaran',
+        'label' => 'Mata Kuliah',
         'rules' => 'xss_clean'
     ),
     array(
@@ -988,7 +988,7 @@ $config['tugas/filter'] = array(
     ),
     array(
         'field' => 'mapel_id[]',
-        'label' => 'Matapelajaran',
+        'label' => 'Mata Kuliah',
         'rules' => 'xss_clean'
     ),
     array(
