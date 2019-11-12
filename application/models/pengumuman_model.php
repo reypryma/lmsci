@@ -4,7 +4,7 @@
  * Class Model untuk resource pengumuman, versi 1.2
  *
  *
- *
+ *  @no:fa:re
  */
 class Pengumuman_model extends CI_Model
 {

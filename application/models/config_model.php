@@ -4,7 +4,7 @@
  * Class Model untuk Config
  *
  *
- *
+ *  @no:fa:re
  */
 class Config_model extends CI_Model
 {
@@ -484,7 +484,7 @@ class Config_model extends CI_Model
      *
      * @param  integer $id
      * @return boolean
-      *
+     *  @no:fa:re
      */
     public function delete_field($id)
     {
@@ -497,7 +497,7 @@ class Config_model extends CI_Model
      *
      * @param  string $id
      * @return array
-      *
+     *  @no:fa:re
      */
     public function retrieve($id)
     {
@@ -511,7 +511,7 @@ class Config_model extends CI_Model
      *
      * @param  string $id
      * @return array
-      *
+     *  @no:fa:re
      */
     public function retrieve_field($id)
     {
@@ -528,7 +528,7 @@ class Config_model extends CI_Model
      * @param  string $value
      * @return boolean
      *
-      *
+     *  @no:fa:re
      */
     public function create($id, $nama = null, $value = null)
     {
@@ -549,7 +549,7 @@ class Config_model extends CI_Model
      * @param  string $value
      * @return boolean
      *
-      *
+     *  @no:fa:re
      */
     public function create_field($id, $nama = null, $value = null)
     {
@@ -570,7 +570,7 @@ class Config_model extends CI_Model
      * @param  string $value
      * @return boolean
      *
-      *
+     *  @no:fa:re
      */
     public function update($id, $nama = null, $value = null)
     {
@@ -586,7 +586,7 @@ class Config_model extends CI_Model
      * @param  string $value
      * @return boolean
      *
-      *
+     *  @no:fa:re
      */
     public function update_field($id, $nama = null, $value = null)
     {

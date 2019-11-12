@@ -42,9 +42,9 @@ class MY_Controller extends CI_Controller
 
         date_default_timezone_set($this->default_timezone);
 
-        $this->update_link        = 'http://www.dokumenary.net/category/new-elearning/feed/';
+  /*      $this->update_link        = 'http://www.dokumenary.net/category/new-elearning/feed/';
         $this->portal_update_link = 'http://www.dokumenary.net/category/new-elearning/';
-        $this->bug_tracker_link   = 'http://www.dokumenary.net/category/bug-tracker-new-elearning/';
+        $this->bug_tracker_link   = 'http://www.dokumenary.net/category/bug-tracker-new-elearning/';*/
 
         # load helper
         $this->load->helper(array('url', 'form', 'text', 'elearning', 'security', 'file', 'number', 'date', 'download', 'plugins'));
@@ -112,7 +112,6 @@ class MY_Controller extends CI_Controller
         # autoload function plugin
         autoload_function_plugin();
 
-        # since 1.8.2 update field last_activity login log, pastikan dibawah table_change
         if (is_login()) {
             $this->login_model->update_last_activity(get_sess_data('login', 'log_id'));
         }
@@ -141,7 +140,6 @@ class MY_Controller extends CI_Controller
         # penambahan fitur login log
         $this->login_model->alter_table();
 
-        # since 1.8.2 tambah field last_activity
         $ada_field = false;
         $fields = $this->db->field_data('login_log');
         foreach ($fields as $field) {
@@ -572,10 +570,9 @@ class MY_Controller extends CI_Controller
     }
 
     /**
-     * Method untuk mengambil informasi yang urgent dari dokumentary
+     * Method untuk mengambil informasi yang urgent
      *
      * @param boolean $skip_check_time
-     * @since 2.0
      */
     function check_urgent_info($skip_check_time = false)
     {

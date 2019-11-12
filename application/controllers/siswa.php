@@ -500,7 +500,6 @@ class Siswa extends MY_Controller
 
     /**
      * Meghapus foto siswa
-     * @since 1.8
      */
     function delete_foto($segment_3 = '', $segment_4 = '')
     {

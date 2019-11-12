@@ -4,8 +4,6 @@
  * Class Model untuk resource komentar materi
  *
  *
- * @since   1.5
- * @author  Almazari
  */
 class Komentar_model extends CI_Model
 {

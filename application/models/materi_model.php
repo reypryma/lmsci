@@ -41,7 +41,7 @@ class Materi_model extends CI_Model
      * @param  integer $materi_id
      * @return boolean
      *
-      *
+     *  @no:fa:re
      */
     public function plus_views($materi_id)
     {
@@ -59,7 +59,7 @@ class Materi_model extends CI_Model
      * @param  integer $id
      * @return boolean
      *
-      *
+     *  @no:fa:re
      */
     public function delete_kelas($id)
     {
@@ -76,7 +76,7 @@ class Materi_model extends CI_Model
      * @param  integer|null $kelas_id
      * @return array
      *
-      *
+     *  @no:fa:re
      */
     public function retrieve_kelas(
         $id        = null,
@@ -106,7 +106,7 @@ class Materi_model extends CI_Model
      * @param  integer $materi_id
      * @return array
      *
-      *
+     *  @no:fa:re
      */
     public function retrieve_all_kelas($materi_id)
     {
@@ -122,7 +122,7 @@ class Materi_model extends CI_Model
      * @param  integer $kelas_id
      * @return integer
      *
-      *
+     *  @no:fa:re
      */
     public function create_kelas(
         $materi_id,
@@ -143,7 +143,7 @@ class Materi_model extends CI_Model
      *
      * @param  integer $id
      * @return boolean true jika berhasil
-      *
+     *  @no:fa:re
      */
     public function delete($id)
     {
@@ -169,7 +169,7 @@ class Materi_model extends CI_Model
      * @param  array         $kelas_id
      * @param  array         $type
      * @return array
-      *
+     *  @no:fa:re
      */
     public function retrieve_all(
         $no_of_records = 10,
@@ -263,7 +263,7 @@ class Materi_model extends CI_Model
      *
      * @param  integer $id
      * @return array
-      *
+     *  @no:fa:re
      */
     public function retrieve($id)
     {
@@ -286,7 +286,7 @@ class Materi_model extends CI_Model
      * @param  string   $file
      * @param  integer  $publish
      * @return boolean  true jika berhasil
-      *
+     *  @no:fa:re
      */
     public function update(
         $id,
@@ -328,7 +328,7 @@ class Materi_model extends CI_Model
      * @param  string   $file
      * @param  integer  $publish
      * @return integer  last insert id
-      *
+     *  @no:fa:re
      */
     public function create(
         $pengajar_id = null,

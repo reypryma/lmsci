@@ -12,8 +12,8 @@ class Pengajar_model extends CI_Model
      *
      * @param  integer $id
      * @return boolean
-      *
-     * @since  1.8
+     * @no:fa:re
+     *
      */
     public function delete_foto($id)
     {
@@ -28,7 +28,7 @@ class Pengajar_model extends CI_Model
      * @param  string $by
      * @param  array  $param
      * @return integer
-      *
+     *  @no:fa:re
      */
     public function count($by, $param = array())
     {
@@ -61,7 +61,7 @@ class Pengajar_model extends CI_Model
      * @param  string $nama
      * @return array
      *
-      *
+     *  @no:fa:re
      */
     public function retrieve_all_by_name($nama)
     {
@@ -99,7 +99,7 @@ class Pengajar_model extends CI_Model
      * @param  integer $page_no
      * @param  boolean $pagination
      * @return array
-      *
+     *  @no:fa:re
      */
     public function retrieve_all_filter(
         $nip           = '',
@@ -192,7 +192,7 @@ class Pengajar_model extends CI_Model
      *
      * @param  integer $id
      * @return boolean true jika berhasil
-      *
+     *  @no:fa:re
      */
     public function delete_ma($id)
     {
@@ -210,7 +210,7 @@ class Pengajar_model extends CI_Model
      * @param  null|integer     $pengajar_id
      * @param  null|integer     $mapel_kelas_id
      * @return array
-      *
+     *  @no:fa:re
      */
     public function retrieve_all_ma(
         $hari_id        = null,
@@ -253,7 +253,7 @@ class Pengajar_model extends CI_Model
      * @param  integer|null $pengajar_id
      * @param  integer|null $mapel_kelas_id
      * @return array
-      *
+     *  @no:fa:re
      */
     public function retrieve_ma($id = null, $pengajar_id = null, $mapel_kelas_id = null, $hari_id = null, $jam_mulai = null, $jam_selesai = null)
     {
@@ -299,7 +299,7 @@ class Pengajar_model extends CI_Model
      * @param  integer $pengajar_id
      * @param  integer $mapel_kelas_id
      * @return boolean true jika berhasil
-      *
+     *  @no:fa:re
      */
     public function update_ma(
         $id,
@@ -337,7 +337,7 @@ class Pengajar_model extends CI_Model
      * @param  integer $pengajar_id
      * @param  integer $mapel_kelas_id
      * @return integer last insert id
-      *
+     *  @no:fa:re
      */
     public function create_ma(
         $hari_id,
@@ -366,7 +366,7 @@ class Pengajar_model extends CI_Model
      *
      * @param  integer $id
      * @return boolean true jika berhasil
-      *
+     *  @no:fa:re
      */
     public function delete($id)
     {
@@ -384,7 +384,7 @@ class Pengajar_model extends CI_Model
      * @param  integer          $page_no
      * @param  null|integer     $status_id
      * @return array
-      *
+     *  @no:fa:re
      */
     public function retrieve_all(
         $no_of_records = 10,
@@ -413,7 +413,7 @@ class Pengajar_model extends CI_Model
      * @param  null|integer $nip
      * @param  null|integer $status_id
      * @return array
-      *
+     *  @no:fa:re
      */
     public function retrieve($id = null, $nip = null, $status_id = null)
     {
@@ -444,7 +444,7 @@ class Pengajar_model extends CI_Model
      * @param  null|string  $foto
      * @param  integer      $status_id
      * @return boolean      true jika berhasil
-      *
+     *  @no:fa:re
      */
     public function update(
         $id,
@@ -483,7 +483,7 @@ class Pengajar_model extends CI_Model
      * @param  null|string  $foto
      * @param  integer      $status_id
      * @return integer      last insert id
-      *
+     *  @no:fa:re
      */
     public function create(
         $nip          = null,

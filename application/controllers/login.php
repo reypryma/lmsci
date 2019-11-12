@@ -496,7 +496,6 @@ class Login extends MY_Controller
     /**
      * Method untuk cek sudah login atau belum
      * @return boolean
-     * @since  1.8
      */
     function data_onload()
     {
@@ -514,7 +513,6 @@ class Login extends MY_Controller
 
     /**
      * Method untuk redirect karna session telah expired
-     * @since  1.8
      */
     function sess_expired()
     {

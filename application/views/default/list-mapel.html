@@ -25,7 +25,14 @@ Manajemen Mata Kuliah - {{ parent() }}
                 <b>Note: </b> Mata Kuliah tidak dapat dihapus namun dapat di ubah menjadi tidak aktif
             </div>
         </div>-->
-
+        <div class="row-fluid">
+            <div class="span2">
+                <a href="http://localhost/lmsci/index.php/mapel/add/" class="btn btn-primary">Tambah Mapel</a>
+            </div>
+            <div class="span10">
+                Atur Mata Kuliah yang ada di Universitas<br>
+                <b>Note: </b> Mata Kuliah tidak dapat dihapus namun dapat di ubah menjadi tidak aktif
+            </div>
         <br>
         <table class="table table-striped">
             <thead>
@@ -55,6 +62,8 @@ Manajemen Mata Kuliah - {{ parent() }}
 <!--
                         <a class="btn btn-default" href="{{ site_url('mapel/edit/' ~ v.id ~ '/' ~ enurl_redirect(current_url())) }}"><i class="icon-edit"></i> Edit</a>
 -->
+                        <a class="btn btn-default" href="{{ 'http://localhost/lmsci/index.php/'~'mapel/edit/' ~ v.id ~ '/' ~ enurl_redirect(current_url())}}" target="_blank"><i class="icon-edit"></i> Edit</a>
+
                     </td>
                 </tr>
                 {% endfor %}

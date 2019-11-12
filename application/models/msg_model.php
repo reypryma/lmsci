@@ -4,7 +4,7 @@
  * Class Model untuk resource message
  *
  *
- *
+ *  @no:fa:re
  */
 class Msg_model extends CI_Model
 {

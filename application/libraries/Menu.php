@@ -1,10 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Class menu aplikasi e-learning dokumenary.net
+ * Class menu aplikasi e-learning
  *
-  *
- * @since  1.8
+ *  @no:fa:re
+ *
  */
 class Menu
 {
