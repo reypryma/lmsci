@@ -1,0 +1,966 @@
+Index: application/config/config.sample.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/config/config.sample.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/config/config.sample.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -35,9 +35,9 @@
+  * Ini untuk keperluan demo aplikasi, jika true ada beberapa fungsi akan didisable seperti :
+  * - update pengaturan
+  * - email template
+- * - manajemen matapelajaran
++ * - manajemen Mata Kuliah
+  * - manajemen kelas
+- * - matapelajaran kelas
++ * - Mata Kuliah kelas
+  * - edit profil admin
+  */
+ $config['is_demo_app'] = false;
+Index: application/config/form_validation.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/config/form_validation.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/config/form_validation.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -7,7 +7,7 @@
+         'rules' => 'required|trim|xss_clean'
+     ),
+     array(
+-        'field' => 'nama-sekolah',
++        'field' => 'nama-universitas',
+         'label' => 'Nama sekolah',
+         'rules' => 'required|trim|xss_clean'
+     ),
+@@ -177,7 +177,7 @@
+
+ $config['pengaturan'] = array(
+     array(
+-        'field' => 'nama-sekolah',
++        'field' => 'nama-universitas',
+         'label' => 'Nama sekolah',
+         'rules' => 'required|trim|xss_clean'
+     ),
+@@ -217,12 +217,12 @@
+ $config['mapel/add'] = array(
+     array(
+         'field' => 'nama',
+-        'label' => 'Nama Matapelajaran',
++        'label' => 'Nama Mata Kuliah',
+         'rules' => 'required|trim|xss_clean|min_length[2]'
+     ),
+     array(
+         'field' => 'info',
+-        'label' => 'Info Matapelajaran',
++        'label' => 'Info Mata Kuliah',
+         'rules' => 'trim'
+     )
+ );
+@@ -230,12 +230,12 @@
+ $config['mapel/edit'] = array(
+     array(
+         'field' => 'nama',
+-        'label' => 'Nama Matapelajaran',
++        'label' => 'Nama Mata Kuliah',
+         'rules' => 'required|trim|xss_clean|min_length[2]'
+     ),
+     array(
+         'field' => 'info',
+-        'label' => 'Info Matapelajaran',
++        'label' => 'Info Mata Kuliah',
+         'rules' => 'trim'
+     ),
+     array(
+@@ -682,7 +682,7 @@
+     ),
+     array(
+         'field' => 'mapel_kelas_id',
+-        'label' => 'Matapelajaran',
++        'label' => 'Mata pelajaran',
+         'rules' => 'required|trim|xss_clean|numeric'
+     ),
+     array(
+@@ -758,7 +758,7 @@
+ $config['materi/add/tertulis'] = array(
+     array(
+         'field' => 'mapel_id',
+-        'label' => 'Matapelajaran',
++        'label' => 'Mata Kuliah',
+         'rules' => 'required|trim|xss_clean|numeric'
+     ),
+     array(
+@@ -781,7 +781,7 @@
+ $config['materi/add/file'] = array(
+     array(
+         'field' => 'mapel_id',
+-        'label' => 'Matapelajaran',
++        'label' => 'Mata Kuliah',
+         'rules' => 'required|trim|xss_clean|numeric'
+     ),
+     array(
+@@ -799,7 +799,7 @@
+ $config['materi/edit/tertulis'] = array(
+     array(
+         'field' => 'mapel_id',
+-        'label' => 'Matapelajaran',
++        'label' => 'Mata Kuliah',
+         'rules' => 'required|trim|xss_clean|numeric'
+     ),
+     array(
+@@ -827,7 +827,7 @@
+ $config['materi/edit/file'] = array(
+     array(
+         'field' => 'mapel_id',
+-        'label' => 'Matapelajaran',
++        'label' => 'Mata Kuliah',
+         'rules' => 'required|trim|xss_clean|numeric'
+     ),
+     array(
+@@ -850,7 +850,7 @@
+ $config['tugas/add_ganda_essay'] = array(
+     array(
+         'field' => 'mapel_id',
+-        'label' => 'Matapelajaran',
++        'label' => 'Mata Kuliah',
+         'rules' => 'required|trim|xss_clean|numeric'
+     ),
+     array(
+@@ -878,7 +878,7 @@
+ $config['tugas/add_upload'] = array(
+     array(
+         'field' => 'mapel_id',
+-        'label' => 'Matapelajaran',
++        'label' => 'Mata Kuliah',
+         'rules' => 'required|trim|xss_clean|numeric'
+     ),
+     array(
+@@ -950,7 +950,7 @@
+     ),
+     array(
+         'field' => 'mapel_id[]',
+-        'label' => 'Matapelajaran',
++        'label' => 'Mata Kuliah',
+         'rules' => 'xss_clean'
+     ),
+     array(
+@@ -988,7 +988,7 @@
+     ),
+     array(
+         'field' => 'mapel_id[]',
+-        'label' => 'Matapelajaran',
++        'label' => 'Mata Kuliah',
+         'rules' => 'xss_clean'
+     ),
+     array(
+Index: application/controllers/ajax.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/controllers/ajax.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/controllers/ajax.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -207,7 +207,7 @@
+
+             case 'mapel_kelas':
+                 $kelas_id = $this->input->post('kelas_id', TRUE);
+-                echo '<option value="">Pilih Matapelajaran</option>';
++                echo '<option value="">Pilih Mata Kuliah</option>';
+                 $retrieve_all = $this->mapel_model->retrieve_all_kelas(null, $kelas_id, 1);
+                 foreach ($retrieve_all as $v) {
+                     $m = $this->mapel_model->retrieve($v['mapel_id']);
+Index: application/controllers/kelas.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/controllers/kelas.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/controllers/kelas.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -166,7 +166,7 @@
+                     default:
+                         $return .= '<div class="panel-heading">
+                             '.$s['nama'].'&nbsp;&nbsp;'.(($s['aktif'] == 0) ? '<span class="label label-warning">Kelas tidak aktif</span>' : '').'
+-                            '.(($s['aktif'] == 1) ? '<a href="'.site_url('kelas/mapel_kelas/add/'.$p['id'].'/'.$s['id'].'/'.enurl_redirect(current_url())).'" class="btn btn-primary pull-right" style="margin-top:-5px;"><i class="icon-wrench"></i> Atur Matapelajaran</a>' : '').'
++                            '.(($s['aktif'] == 1) ? '<a href="'.site_url('kelas/mapel_kelas/add/'.$p['id'].'/'.$s['id'].'/'.enurl_redirect(current_url())).'" class="btn btn-primary pull-right" style="margin-top:-5px;"><i class="icon-wrench"></i> Atur Mata Kuliah</a>' : '').'
+                         </div>';
+                         if ($s['aktif'] == 1) {
+                             $return .= '<div class="panel-body">';
+@@ -192,12 +192,12 @@
+                                         $return .= '</div>
+                                         <b>
+                                         '.$m['nama'].'
+-                                        '.(($v['aktif'] == 0) ? '<span class="text-error"><i class="icon-info-sign"></i> Matapelajaran Kelas tidak aktif' : '').'
++                                        '.(($v['aktif'] == 0) ? '<span class="text-error"><i class="icon-info-sign"></i> Mata Kuliah Kelas tidak aktif' : '').'
+                                         </b>
+
+                                         <div id="modal-'.$v['id'].'" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                             <div class="modal-header">
+-                                                <h3 id="myModalLabel">Anda yakin ingin menghapus Matapelajaran Kelas ini?</h3>
++                                                <h3 id="myModalLabel">Anda yakin ingin menghapus Mata Kuliah Kelas ini?</h3>
+                                             </div>
+                                             <div class="modal-footer">
+                                                 <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Batal</button>
+@@ -260,7 +260,7 @@
+                     $this->mapel_model->update_kelas($mapel_kelas_id, $mapel_kelas['kelas_id'], $mapel_kelas['mapel_id'], 1);
+                 }
+
+-                $this->session->set_flashdata('edit-mapel-kelas-'.$kelas['id'], get_alert('success', 'Matapelajaran kelas berhasil diaktifkan.'));
++                $this->session->set_flashdata('edit-mapel-kelas-'.$kelas['id'], get_alert('success', 'Mata Kuliah kelas berhasil diaktifkan.'));
+                 redirect($uri_back);
+             break;
+
+@@ -294,7 +294,7 @@
+                     $this->mapel_model->delete_kelas($mapel_kelas_id);
+                 }
+
+-                $this->session->set_flashdata('edit-mapel-kelas-'.$kelas['id'], get_alert('warning', 'Matapelajaran kelas berhasil dihapus.'));
++                $this->session->set_flashdata('edit-mapel-kelas-'.$kelas['id'], get_alert('warning', 'Mata Kuliah kelas berhasil dihapus.'));
+                 redirect($uri_back);
+             break;
+
+@@ -325,11 +325,11 @@
+                 $data['kelas']  = $kelas;
+                 $data['parent'] = $parent;
+
+-                # ambil semua matapelajaran
++                # ambil semua Mata Kuliah
+                 $retrieve_all   = $this->mapel_model->retrieve_all_mapel();
+                 $data['mapels'] = $retrieve_all;
+
+-                # ambil matapelajaran pada kelas ini
++                # ambil Mata Kuliah pada kelas ini
+                 $retrieve_all_kelas = $this->mapel_model->retrieve_all_kelas();
+                 $mapel_kelas_id = array();
+                 foreach ($retrieve_all_kelas as $v) {
+@@ -343,7 +343,7 @@
+                         $info = $this->input->post('info', TRUE);
+                         $this->mapel_model->create($nama, $info);
+
+-                        $this->session->set_flashdata('mapel', get_alert('success', 'Matapelajaran baru berhasil ditambah.'));
++                        $this->session->set_flashdata('mapel', get_alert('success', 'Mata Kuliah baru berhasil ditambah.'));
+                         redirect('kelas/mapel_kelas/add/'.$parent_id.'/'.$kelas_id.'/'.enurl_redirect($uri_back));
+                     }
+                     $data['post_mapel'] = 1;
+@@ -382,7 +382,7 @@
+                         }
+                     }
+
+-                    $this->session->set_flashdata('mapel', get_alert('success', 'Matapelajaran kelas berhasil disimpan.'));
++                    $this->session->set_flashdata('mapel', get_alert('success', 'Mata Kuliah kelas berhasil disimpan.'));
+                     redirect('kelas/mapel_kelas/add/'.$parent_id.'/'.$kelas_id.'/'.enurl_redirect($uri_back));
+                 }
+             break;
+Index: application/controllers/login.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/controllers/login.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/controllers/login.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -287,7 +287,7 @@
+                     # kirim email registrasi
+                     @kirim_email('email-template-register-siswa', $username, array(
+                         'nama'         => $nama,
+-                        'nama_sekolah' => get_pengaturan('nama-sekolah', 'value')
++                        'nama_sekolah' => get_pengaturan('nama-universitas', 'value')
+                     ));
+
+                     $pesan = "Registrasi sebagai siswa berhasil, tunggu pengaktifan akun oleh admin.";
+@@ -354,7 +354,7 @@
+                     # kirim email registrasi
+                     @kirim_email('email-template-register-pengajar', $username, array(
+                         'nama'         => $nama,
+-                        'nama_sekolah' => get_pengaturan('nama-sekolah', 'value')
++                        'nama_sekolah' => get_pengaturan('nama-universitas', 'value')
+                     ));
+
+                     $pesan = "Registrasi sebagai pengajar berhasil, tunggu pengaktifan akun oleh admin.";
+Index: application/controllers/mapel.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/controllers/mapel.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/controllers/mapel.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -1,7 +1,7 @@
+ <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+ /**
+- * Class untuk resource Matapelajaran
++ * Class untuk resource Mata Kuliah
+  *
+@@ -66,7 +66,7 @@
+             $info = $this->input->post('info', TRUE);
+             $this->mapel_model->create($nama, $info);
+
+-            $this->session->set_flashdata('mapel', get_alert('success', 'Matapelajaran baru berhasil disimpan.'));
++            $this->session->set_flashdata('mapel', get_alert('success', 'Mata Kuliah baru berhasil disimpan.'));
+             redirect('mapel/index');
+         }
+
+@@ -103,7 +103,7 @@
+
+             $this->mapel_model->update($id, $nama, $info, $aktif);
+
+-            $this->session->set_flashdata('mapel', get_alert('success', 'Matapelajaran berhasil di perbaharui.'));
++            $this->session->set_flashdata('mapel', get_alert('success', 'Mata Kuliah berhasil di perbaharui.'));
+             redirect($uri_back);
+         }
+
+Index: application/controllers/materi.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/controllers/materi.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/controllers/materi.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -68,7 +68,7 @@
+             $val['materi_kelas'][] = $kelas;
+         }
+
+-        # cari matapelajarannya
++        # cari Mata Kuliahnya
+         $val['mapel'] = $this->mapel_model->retrieve($val['mapel_id']);
+
+         # hitung jumlah komentar
+Index: application/controllers/pengajar.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/controllers/pengajar.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/controllers/pengajar.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -589,7 +589,7 @@
+                 $mapel_kelas_id
+             );
+
+-            $this->session->set_flashdata('add', get_alert('success', 'Jadwal Matapelajaran berhasil disimpan.'));
++            $this->session->set_flashdata('add', get_alert('success', 'Jadwal Mata Kuliah berhasil disimpan.'));
+             redirect('pengajar/add_ampuan/'.$status_id.'/'.$pengajar_id.'/'.$hari_id);
+         }
+
+Index: application/controllers/setup.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/controllers/setup.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/controllers/setup.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -82,7 +82,7 @@
+                     redirect('setup/index/1');
+                 }
+
+-                $check = $this->config_model->retrieve('nama-sekolah');
++                $check = $this->config_model->retrieve('nama-universitas');
+                 if (empty($check)) {
+                     redirect('setup/index/2');
+                 }
+@@ -159,7 +159,7 @@
+                     redirect('setup/index/1');
+                 }
+
+-                $check = $this->config_model->retrieve('nama-sekolah');
++                $check = $this->config_model->retrieve('nama-universitas');
+                 if (empty($check)) {
+                     redirect('setup/index/2');
+                 }
+@@ -220,7 +220,7 @@
+                     redirect('setup/index/1');
+                 }
+
+-                $check = $this->config_model->retrieve('nama-sekolah');
++                $check = $this->config_model->retrieve('nama-universitas');
+                 if (!empty($check)) {
+                     redirect('setup/index/3');
+                 }
+Index: application/controllers/tugas.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/controllers/tugas.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/controllers/tugas.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -59,7 +59,7 @@
+             $val['tugas_kelas'][] = $kelas;
+         }
+
+-        # cari matapelajarannya
++        # cari Mata Kuliahnya
+         $val['mapel'] = $this->mapel_model->retrieve($val['mapel_id']);
+
+         # type label
+Index: application/core/MY_Controller.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/core/MY_Controller.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/core/MY_Controller.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -330,7 +330,7 @@
+     }
+
+     /**
+-     * Method untuk mendapatkan jawal matapelajaran untuk siswa
++     * Method untuk mendapatkan jawal Mata Kuliah untuk siswa
+      *
+      * @param  integer $siswa_id
+      * @return array
+Index: application/helpers/elearning_helper.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/helpers/elearning_helper.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/helpers/elearning_helper.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -99,7 +99,7 @@
+
+     # cek proses install tidak
+     if ($CI->uri->segment(1) != 'setup') {
+-        $return['copyright'] = 'Copyright &copy; 2018 - ' . date('Y') . ' ' . get_pengaturan('nama-sekolah', 'value');
++        $return['copyright'] = 'Copyright &copy; 2018 - ' . date('Y') . ' ' . get_pengaturan('nama-universitas', 'value');
+         $return['site_name'] = 'e-Learning management';
+         $return['version']   = '<a href="#">versi ' . get_pengaturan('versi', 'value') . '</a>';
+
+@@ -935,7 +935,7 @@
+     $email_subject = str_replace($arr_old, $arr_new, $template['subject']);
+     $email_body    = str_replace($arr_old, $arr_new, $template['body']);
+     $email_server  = get_pengaturan('email-server', 'value');
+-    $nama_sekolah  = get_pengaturan('nama-sekolah', 'value');
++    $nama_sekolah  = get_pengaturan('nama-universitas', 'value');
+
+     $CI =& get_instance();
+     $CI->email->clear(true);
+@@ -1008,7 +1008,7 @@
+
+     @kirim_email('email-template-approve-siswa', $login['username'], array(
+         'nama'         => $nama,
+-        'nama_sekolah' => get_pengaturan('nama-sekolah', 'value'),
++        'nama_sekolah' => get_pengaturan('nama-universitas', 'value'),
+         'tabel_profil' => $tabel_profil,
+         'url_login'    => site_url('login')
+     ));
+@@ -1053,7 +1053,7 @@
+
+     @kirim_email('email-template-approve-pengajar', $login['username'], array(
+         'nama'         => $nama,
+-        'nama_sekolah' => get_pengaturan('nama-sekolah', 'value'),
++        'nama_sekolah' => get_pengaturan('nama-universitas', 'value'),
+         'tabel_profil' => $tabel_profil,
+         'url_login'    => site_url('login')
+     ));
+Index: application/libraries/Menu.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/libraries/Menu.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/libraries/Menu.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -73,7 +73,7 @@
+             0 => array(
+                 '<a href="' . site_url() . '"><i class="menu-icon icon-home"></i>Beranda</a>',
+                 '<a href="' . site_url('message') . '"><i class="menu-icon icon-comments"></i>Pesan <span class="menu-count-new-msg"></span></a>',
+-                '<a href="' . site_url('siswa/jadwal_mapel') . '"><i class="menu-icon icon-tasks"></i>Jadwal Matapelajaran</a>'
++                '<a href="' . site_url('siswa/jadwal_mapel') . '"><i class="menu-icon icon-tasks"></i>Jadwal Mata Kuliah</a>'
+             ),
+             1 => array(
+                 '<a href="' . site_url('tugas?clear_filter=true') . '"><i class="menu-icon icon-tasks"></i>Tugas </a>',
+Index: application/models/mapel_model.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/models/mapel_model.php	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/models/mapel_model.php	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -9,7 +9,7 @@
+ class Mapel_model extends CI_Model
+ {
+     /**
+-     * Method untuk mendapatkan jumlah matapelajaran kelas yang aktif
++     * Method untuk mendapatkan jumlah Mata Kuliah kelas yang aktif
+      * @return integer
+      * @since  1.8
+      *  @no:fa:re
+Index: application/views/default/detail-pengajar.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/detail-pengajar.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/detail-pengajar.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -96,7 +96,7 @@
+                             <thead>
+                                 <tr bgcolor="#fbfbfb">
+                                     <th>HARI</th>
+-                                    <th>MATAPELAJARAN DAN JAM</th>
++                                    <th>Mata Kuliah DAN JAM</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+Index: application/views/default/edit-materi.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/edit-materi.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/edit-materi.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -21,7 +21,7 @@
+                 </div>
+             </div>
+             <div class="control-group">
+-                <label class="control-label">Matapelajaran <span class="text-error">*</span></label>
++                <label class="control-label">Mata Kuliah <span class="text-error">*</span></label>
+                 <div class="controls">
+                     <select name="mapel_id">
+                         <option value="">--pilih--</option>
+Index: application/views/default/edit-tugas.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/edit-tugas.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/edit-tugas.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -21,7 +21,7 @@
+                 </div>
+             </div>
+             <div class="control-group">
+-                <label class="control-label">Matapelajaran <span class="text-error">*</span></label>
++                <label class="control-label">Mata Kuliah <span class="text-error">*</span></label>
+                 <div class="controls">
+                     <select name="mapel_id">
+                         <option value="">--pilih--</option>
+Index: application/views/default/jadwal-mapel.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/jadwal-mapel.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/jadwal-mapel.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -7,7 +7,7 @@
+ {% block content %}
+ <div class="panel panel-default">
+     <div class="panel-heading">
+-        <strong>Jadwal Matapelajaran</strong>
++        <strong>Jadwal Mata Kuliah</strong>
+     </div>
+     <div class="panel-body">
+         <table class="table">
+Index: application/views/default/layout-print.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/layout-print.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/layout-print.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -24,7 +24,7 @@
+                 <br>
+                 <div class="kop-print">
+                     <img src="{{ get_logo_config() }}">
+-                    <div class="kop-nama">{{ get_pengaturan('nama-sekolah', 'value') }}</div>
++                    <div class="kop-nama">{{ get_pengaturan('nama-universitas', 'value') }}</div>
+                     <div class="kop-info">Alamat : {{ get_pengaturan('alamat', 'value') }}, Telepon : {{ get_pengaturan('telp', 'value') }}</div>
+                 </div>
+                 <hr class="kop-print-hr">
+Index: application/views/default/list-mapel-kelas.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/list-mapel-kelas.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/list-mapel-kelas.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -1,13 +1,13 @@
+ {% extends "layout-private.html" %}
+
+ {% block title %}
+-Matapelajaran Kelas - {{ parent() }}
++Mata Kuliah Kelas - {{ parent() }}
+ {% endblock %}
+
+ {% block content %}
+ <div class="module">
+     <div class="module-head">
+-        <h3>Matapelajaran Kelas</h3>
++        <h3>Mata Kuliah Kelas</h3>
+     </div>
+     <div class="module-body">
+         {{ get_flashdata('mapel')|raw }}
+@@ -63,7 +63,7 @@
+                 </div>
+             </div>
+             <div class="span6">
+-                Atur matapelajaran yang ada pada masing - masing kelas
++                Atur mata kuliah yang ada pada masing - masing kelas
+             </div>
+         </div>
+
+Index: application/views/default/list-mapel.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/list-mapel.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/list-mapel.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -1,13 +1,13 @@
+ {% extends "layout-private.html" %}
+
+ {% block title %}
+-Manajemen Matapelajaran - {{ parent() }}
++Manajemen Mata Kuliah - {{ parent() }}
+ {% endblock %}
+
+ {% block content %}
+ <div class="module">
+     <div class="module-head">
+-        <h3>Manajemen Matapelajaran</h3>
++        <h3>Manajemen Mata Kuliah</h3>
+     </div>
+     <div class="module-body">
+         {{ get_flashdata('mapel')|raw }}
+@@ -16,22 +16,22 @@
+             {{ get_alert('warning', get_demo_msg())|raw }}
+         {% endif %}
+
+-        <div class="row-fluid">
++<!--        <div class="row-fluid">
+             <div class="span2">
+-                <a href="{{ site_url('mapel/add') }}" class="btn btn-primary">Tambah Mapel</a>
++                <a href="{{ site_url('mapel/add/') }}" class="btn btn-primary">Tambah Mapel</a>
+             </div>
+             <div class="span10">
+-                Atur matapelajaran yang ada di sekolah<br>
+-                <b>Note: </b> Matapelajaran tidak dapat dihapus namun dapat di ubah menjadi tidak aktif
++                Atur Mata Kuliah yang ada di Universitas<br>
++                <b>Note: </b> Mata Kuliah tidak dapat dihapus namun dapat di ubah menjadi tidak aktif
+             </div>
+-        </div>
++        </div>-->
+
+         <br>
+         <table class="table table-striped">
+             <thead>
+                 <tr>
+                     <th width="5%">No</th>
+-                    <th>Matapelajaran</th>
++                    <th>Mata Kuliah</th>
+                     <th>Aktif</th>
+                     <th width="15%"></th>
+                 </tr>
+@@ -52,7 +52,9 @@
+                         {% endif %}
+                     </td>
+                     <td>
++<!--
+                         <a class="btn btn-default" href="{{ site_url('mapel/edit/' ~ v.id ~ '/' ~ enurl_redirect(current_url())) }}"><i class="icon-edit"></i> Edit</a>
++-->
+                     </td>
+                 </tr>
+                 {% endfor %}
+@@ -63,4 +65,4 @@
+         {{ pagination|raw }}
+     </div>
+ </div>
+-{% endblock %}
+\ No newline at end of file
++{% endblock %}
+Index: application/views/default/list-nilai.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/list-nilai.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/list-nilai.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -34,7 +34,7 @@
+                         <td>{{ tugas.judul }}</td>
+                     </tr>
+                     <tr>
+-                        <th>Matapelajaran</th>
++                        <th>Mata Kuliah</th>
+                         <td>{{ tugas.mapel.nama }}</td>
+                     </tr>
+                     <tr>
+Index: application/views/default/list-peserta.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/list-peserta.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/list-peserta.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -34,7 +34,7 @@
+                         <td>{{ tugas.judul }}</td>
+                     </tr>
+                     <tr>
+-                        <th>Matapelajaran</th>
++                        <th>Mata Kuliah</th>
+                         <td>{{ tugas.mapel.nama }}</td>
+                     </tr>
+                     <tr>
+Index: application/views/default/list-siswa.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/list-siswa.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/list-siswa.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -87,15 +87,17 @@
+                     <tr>
+                         <th valign="top">Update Status Terpilih</th>
+                         <td valign="top">
+-                            <select name="status_id" style="width:100%;">
+-                                <option>--Pilih Status--</option>
+-                                <option value="1">Aktif</option>
+-                                {% if status_id == 0 %}
+-                                <option value="2">Blocking</option>
+-                                {% elseif status_id == 2 %}
+-                                <option value="3">Alumni</option>
+-                                {% endif %}
+-                            </select>
++                            <label>
++                                <select name="status_id" style="width:100%;">
++                                    <option>--Pilih Status--</option>
++                                    <option value="1">Aktif</option>
++                                    {% if status_id == 0 %}
++                                    <option value="2">Blocking</option>
++                                    {% elseif status_id == 2 %}
++                                    <option value="3">Alumni</option>
++                                    {% endif %}
++                                </select>
++                            </label>
+                         </td>
+                         <td valign="top">
+                             <button type="submit" class="btn">Update</button>
+Index: application/views/default/manajemen-tugas.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/manajemen-tugas.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/manajemen-tugas.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -34,7 +34,7 @@
+                         <td>{{ tugas.judul }}</td>
+                     </tr>
+                     <tr>
+-                        <th>Matapelajaran</th>
++                        <th>Mata Kuliah</th>
+                         <td>{{ tugas.mapel.nama }}</td>
+                     </tr>
+                     <tr>
+Index: application/views/default/pantau-ujian.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/pantau-ujian.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/pantau-ujian.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -34,7 +34,7 @@
+                         <td>{{ tugas.judul }}</td>
+                     </tr>
+                     <tr>
+-                        <th>Matapelajaran</th>
++                        <th>Mata Kuliah</th>
+                         <td>{{ tugas.mapel.nama }}</td>
+                     </tr>
+                     <tr>
+Index: application/views/default/pengaturan.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/pengaturan.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/pengaturan.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -34,8 +34,8 @@
+             <div class="control-group">
+                 <label class="control-label">Nama sekolah <span class="text-error">*</span></label>
+                 <div class="controls">
+-                    <input type="text" name="nama-sekolah" class="span8" value="{{ set_value('nama-sekolah', get_pengaturan('nama-sekolah', 'value')) }}">
+-                    <br>{{ form_error('nama-sekolah')|raw }}
++                    <input type="text" name="nama-universitas" class="span8" value="{{ set_value('nama-universitas', get_pengaturan('nama-universitas', 'value')) }}">
++                    <br>{{ form_error('nama-universitas')|raw }}
+                 </div>
+             </div>
+             <div class="control-group">
+Index: application/views/default/pp-jadwal-pengajar.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/pp-jadwal-pengajar.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/pp-jadwal-pengajar.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -16,7 +16,7 @@
+                     <thead>
+                         <tr bgcolor="#fbfbfb">
+                             <th>HARI</th>
+-                            <th>MATAPELAJARAN DAN JAM</th>
++                            <th>Mata Kuliah DAN JAM</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+Index: application/views/default/tambah-mapel-kelas.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/tambah-mapel-kelas.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/tambah-mapel-kelas.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -1,13 +1,13 @@
+ {% extends "layout-private.html" %}
+
+ {% block title %}
+-Matapelajaran Kelas - {{ parent() }}
++Mata Kuliah Kelas - {{ parent() }}
+ {% endblock %}
+
+ {% block content %}
+ <div class="module">
+     <div class="module-head">
+-        <h3>{{ anchor(uri_back, 'Matapelajaran Kelas')|raw }} / Atur Matapelajaran</h3>
++        <h3>{{ anchor(uri_back, 'Mata Kuliah Kelas')|raw }} / Atur Mata Kuliah</h3>
+     </div>
+     <div class="module-body">
+         {{ get_flashdata('mapel')|raw }}
+@@ -17,8 +17,8 @@
+         {% endif %}
+
+         <div class="bs-callout bs-callout-info">
+-            <b><a class="as-link pull-right" data-toggle="collapse" data-target="#form-add-mapel">Tambah Matapelajaran</a></b>
+-            Pilih Matapelajaran yang ingin dimasukkan pada <b>{{ kelas['nama'] }}</b>
++            <b><a class="as-link pull-right" data-toggle="collapse" data-target="#form-add-mapel">Tambah Mata Kuliah</a></b>
++            Pilih Mata Kuliah yang ingin dimasukkan pada <b>{{ kelas['nama'] }}</b>
+
+             <div id="form-add-mapel" {% if post_mapel == 0 %} class="collapse" {% endif %}>
+                 {% if is_demo_app() == false %}
+Index: application/views/default/tambah-mapel.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/tambah-mapel.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/tambah-mapel.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -1,13 +1,13 @@
+ {% extends "layout-private.html" %}
+
+ {% block title %}
+-Manajemen Matapelajaran - {{ parent() }}
++Manajemen Mata Kuliah - {{ parent() }}
+ {% endblock %}
+
+ {% block content %}
+ <div class="module">
+     <div class="module-head">
+-        <h3>{{ anchor('mapel', 'Manajemen Matapelajaran')|raw }} / Tambah</h3>
++        <h3>{{ anchor('mapel', 'Manajemen Mata Kuliah')|raw }} / Tambah</h3>
+     </div>
+     <div class="module-body">
+         {{ get_flashdata('mapel')|raw }}
+@@ -42,4 +42,4 @@
+
+     </div>
+ </div>
+-{% endblock %}
+\ No newline at end of file
++{% endblock %}
+Index: application/views/default/tambah-materi.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/tambah-materi.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/tambah-materi.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -21,7 +21,7 @@
+                 </div>
+             </div>
+             <div class="control-group">
+-                <label class="control-label">Matapelajaran <span class="text-error">*</span></label>
++                <label class="control-label">Mata Kuliah <span class="text-error">*</span></label>
+                 <div class="controls">
+                     <select name="mapel_id">
+                         <option value="">--pilih--</option>
+Index: application/views/default/tambah-pengajar-ampuan.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/tambah-pengajar-ampuan.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/tambah-pengajar-ampuan.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -24,7 +24,7 @@
+             <th>Mapel <span class="text-error">*</span></th>
+             <td>
+                 <select name="mapel_kelas_id" style="width:auto" id="mapel_kelas_id">
+-                    <option value="">Pilih Matapelajaran</option>
++                    <option value="">Pilih Mata Kuliah</option>
+                     {% if get_post_data('kelas_id') is not empty %}
+                         {% set post_kelas_id = get_post_data('kelas_id') %}
+                         {% set mapel_kelas = get_row_data('mapel_model', 'retrieve_all_kelas', [null, post_kelas_id]) %}
+Index: application/views/default/tambah-tugas.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/tambah-tugas.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/tambah-tugas.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -21,7 +21,7 @@
+                 </div>
+             </div>
+             <div class="control-group">
+-                <label class="control-label">Matapelajaran <span class="text-error">*</span></label>
++                <label class="control-label">Mata Kuliah <span class="text-error">*</span></label>
+                 <div class="controls">
+                     <select name="mapel_id">
+                         <option value="">--pilih--</option>
+Index: application/views/default/welcome.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/default/welcome.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/default/welcome.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -8,7 +8,7 @@
+         <div class="span12">
+             <div class="well well-small well-box">
+                 <small class="pull-right hidden-phone hidden-tablet">{{ tgl_indo(date('Y-m-d')) }}, IP anda: {{ get_ip() }}</small>
+-                Selamat datang di <b>e-learning {{ get_pengaturan('nama-sekolah', 'value') }}</b>
++                Selamat datang di <b>e-learning {{ get_pengaturan('nama-universitas', 'value') }}</b>
+                 <br>
+                 <i class="icon icon-map-marker"></i> Alamat: {{ get_pengaturan('alamat', 'value') }}
+                 {% if get_pengaturan('telp', 'value') is not empty %}
+Index: application/views/install/install-step-2.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/install/install-step-2.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/install/install-step-2.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -29,8 +29,8 @@
+                     <div class="control-group">
+                         <label class="control-label">Nama sekolah <span class="text-error">*</span></label>
+                         <div class="controls">
+-                            <input type="text" name="nama-sekolah" class="span8" value="{{ set_value('nama-sekolah') }}">
+-                            <br>{{ form_error('nama-sekolah')|raw }}
++                            <input type="text" name="nama-universitas" class="span8" value="{{ set_value('nama-universitas') }}">
++                            <br>{{ form_error('nama-universitas')|raw }}
+                         </div>
+                     </div>
+                     <div class="control-group">
+Index: application/views/install/install-step-3.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- application/views/install/install-step-3.html	(revision 169b34afc6a76e8f86c9555bc9a47a26b3be8a24)
++++ application/views/install/install-step-3.html	(revision 664d0c9ce1ae1a71fcc619eff663d09e85624f3c)
+@@ -14,7 +14,7 @@
+
+             <div class="module-body">
+                 <div class="well well-small" style="box-shadow: none;">
+-                    Atur Kelas dan Matapelajaran yang ada di sekolah. Kelas dan Matapelajaran masih dapat diubah.
++                    Atur Kelas dan Mata Kuliah yang ada di Universitas. Kelas dan Mata Kuliah masih dapat diubah.
+                 </div>
+                 <form method="post" action="{{ site_url('setup/index/3') }}">
+                     <div class="row-fluid">
+@@ -182,7 +182,7 @@
+                             {% endif %}
+                         </div>
+                         <div class="span8">
+-                            <b>Matapelajaran</b>
++                            <b>Mata Kuliah</b>
+                             <hr style="margin-top: 5px; margin-bottom: 5px;">
+                             <ul class="unstyled">
+                                 <li>
