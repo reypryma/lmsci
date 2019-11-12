@@ -3,11 +3,7 @@
 /**
  * Class Controller yang extend dari ci_controller
  *
- * @package   e-Learning Dokumenary Net
- * @author    Almazari <almazary@gmail.com>
- * @copyright Copyright (c) 2013 - 2016, Dokumenary Net.
- * @since     1.0
- * @link      http://dokumenary.net
+
  *
  * INDEMNITY
  * You agree to indemnify and hold harmless the authors of the Software and
@@ -576,7 +572,7 @@ class MY_Controller extends CI_Controller
     }
 
     /**
-     * Method untuk mengambil informasi yang urgent dari dokumenary.net
+     * Method untuk mengambil informasi yang urgent dari dokumentary
      *
      * @param boolean $skip_check_time
      * @since 2.0

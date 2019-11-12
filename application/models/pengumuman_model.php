@@ -3,9 +3,8 @@
 /**
  * Class Model untuk resource pengumuman, versi 1.2
  *
- * @package Elearning Dokumenary
- * @link    http://www.dokumenary.net
- * @author  Almazari <almazary@gmail.com>
+ *
+ *
  */
 class Pengumuman_model extends CI_Model
 {

@@ -3,9 +3,8 @@
 /**
  * Class Model untuk resource message
  *
- * @package Elearning Dokumenary
- * @link    http://www.dokumenary.net
- * @author  Almazari <almazary@gmail.com>
+ *
+ *
  */
 class Msg_model extends CI_Model
 {

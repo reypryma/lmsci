@@ -3,7 +3,7 @@
 /**
  * Class menu aplikasi e-learning dokumenary.net
  *
- * @author Almazari <almazary@gmail.com>
+  *
  * @since  1.8
  */
 class Menu

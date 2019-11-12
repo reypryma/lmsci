@@ -3,11 +3,7 @@
 /**
  * Class untuk halaman utama
  *
- * @package   e-Learning Dokumenary Net
- * @author    Almazari <almazary@gmail.com>
- * @copyright Copyright (c) 2013 - 2016, Dokumenary Net.
- * @since     1.0
- * @link      http://dokumenary.net
+
  *
  * INDEMNITY
  * You agree to indemnify and hold harmless the authors of the Software and
@@ -390,7 +386,7 @@ class Welcome extends MY_Controller
             redirect('welcome');
         }
 
-        $plugin_url  = 'http://elearningplugin.dokumenary.net/index.php';
+        $plugin_url  = 'https://reypryma.github.io/';
         $plugin_data = get_url_data($plugin_url);
         $result_body = json_decode($plugin_data, true);
 

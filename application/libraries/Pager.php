@@ -40,7 +40,7 @@ class Pager
      *     'prev_page' => '' //halaman sebelumnya
      * ];
      * </code>
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function set($table, $no_of_records, $page_no, $where = array(), $order_by = array(), $select_str = '', $group_by = array())
     {
@@ -138,7 +138,7 @@ class Pager
      * <code>
      * $select_str = 'nama, alamat, tgl_lahir';
      * </code>
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function init_select($select_str = '')
     {
@@ -159,7 +159,7 @@ class Pager
      *     'prov_id !=' => [$prov_id, 'where']
      * ];
      * </code>
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function init_where($where = array())
     {
@@ -189,7 +189,7 @@ class Pager
      *     'title', 'id'
      * ];
      * </code>
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function init_groupby($group_by = array())
     {
@@ -208,7 +208,7 @@ class Pager
      *     'id' => 'ASC'
      * ];
      * </code>
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     private function init_orderby($order_by = array())
     {
@@ -240,7 +240,7 @@ class Pager
      * $add_value_segment = array('search value');
      * </code>
      * @return string
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function view($array_data, $url, $add_value_segment = array(), $show_info = true)
     {

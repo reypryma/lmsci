@@ -3,8 +3,7 @@
 /**
  * Class Model untuk resource Login
  *
- * @package Elearning Dokumenary
- * @link    http://www.dokumenary.net
+ *
  */
 class Login_model extends CI_Model
 {
@@ -14,7 +13,7 @@ class Login_model extends CI_Model
      * @param  integer $limit
      * @return array
      * @since  1.8
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function retrieve_new_log($limit = 10)
     {
@@ -30,7 +29,7 @@ class Login_model extends CI_Model
      * @param  integer $page_no
      * @param  string  $login_id
      * @return array
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function retrieve_all_log(
         $no_of_records = 10,
@@ -56,7 +55,7 @@ class Login_model extends CI_Model
      *
      * @param  integer $log_id
      * @return integer
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function retrieve_last_activity($log_id)
     {
@@ -69,7 +68,7 @@ class Login_model extends CI_Model
      * @param  integer $log_id
      * @param  integer $time
      * @return array
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function update_last_activity($log_id, $time = "")
     {
@@ -84,7 +83,7 @@ class Login_model extends CI_Model
      * Method untuk mendapatkan login log terahir berdasarkan login_id
      * @param  integer $login_id
      * @return array
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function retrieve_last_log($login_id)
     {
@@ -98,7 +97,7 @@ class Login_model extends CI_Model
      * Method untuk mendapatkan satu data log berdasarkan id
      * @param  integer $id
      * @return array
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function retrieve_log($id)
     {
@@ -111,7 +110,7 @@ class Login_model extends CI_Model
      * Method untuk menambahkan riwayat log
      * @param  integer $login_id
      * @return integer insert id
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function create_log($login_id)
     {
@@ -163,7 +162,7 @@ class Login_model extends CI_Model
      *
      * @param  integer $id
      * @return boolean true jika berhasil
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function delete($id)
     {
@@ -181,7 +180,7 @@ class Login_model extends CI_Model
      * @param  integer $page_no
      * @param  integer $is_admin
      * @return array
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function retrieve_all(
         $no_of_records = 10,
@@ -221,7 +220,7 @@ class Login_model extends CI_Model
      * @param  null|integer $pengajar_id
      * @param  null|integer $is_admin
      * @return array
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function retrieve(
         $id          = null,
@@ -268,7 +267,7 @@ class Login_model extends CI_Model
      * @param  integer $id
      * @param  string  $password
      * @return boolean true jika berhasil
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function update_password($id, $password)
     {
@@ -290,7 +289,7 @@ class Login_model extends CI_Model
      * @param  integer      $is_admin
      * @param  string|null  $reset_kode
      * @return boolean      true jika berhasil
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function update(
         $id,
@@ -339,7 +338,7 @@ class Login_model extends CI_Model
      * @param  integer|null $pengajar_id
      * @param  integer      $is_admin
      * @return integer      last insert id
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function create(
         $username,

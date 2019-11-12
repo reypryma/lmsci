@@ -86,7 +86,7 @@ function default_parser_item($add_item = array())
         'base_url'          => base_url(),
         'site_url'          => site_url(),
         'favicon_url'       => base_url('assets/images/favicon.ico'),
-        'copyright_setup'   => 'Copyright &copy; 2018 - ' . date('Y') . ' Almazari - <a href="http://www.dokumenary.net">dokumenary.net</a>',
+        'copyright_setup'   => 'Copyright &copy; 2018 - ' . date('Y'),
         'current_url'       => current_url(),
         'logo_url_small'    => get_logo_url(),
         'logo_url_medium'   => get_logo_url('medium'),

@@ -3,9 +3,8 @@
 /**
  * Class Model untuk Config
  *
- * @package Elearning Dokumenary
- * @link    http://www.dokumenary.net
- * @author  Almazari <almazary@gmail.com>
+ *
+ *
  */
 class Config_model extends CI_Model
 {
@@ -485,7 +484,7 @@ class Config_model extends CI_Model
      *
      * @param  integer $id
      * @return boolean
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function delete_field($id)
     {
@@ -498,7 +497,7 @@ class Config_model extends CI_Model
      *
      * @param  string $id
      * @return array
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function retrieve($id)
     {
@@ -512,7 +511,7 @@ class Config_model extends CI_Model
      *
      * @param  string $id
      * @return array
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function retrieve_field($id)
     {
@@ -529,7 +528,7 @@ class Config_model extends CI_Model
      * @param  string $value
      * @return boolean
      *
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function create($id, $nama = null, $value = null)
     {
@@ -550,7 +549,7 @@ class Config_model extends CI_Model
      * @param  string $value
      * @return boolean
      *
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function create_field($id, $nama = null, $value = null)
     {
@@ -571,7 +570,7 @@ class Config_model extends CI_Model
      * @param  string $value
      * @return boolean
      *
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function update($id, $nama = null, $value = null)
     {
@@ -587,7 +586,7 @@ class Config_model extends CI_Model
      * @param  string $value
      * @return boolean
      *
-     * @author Almazari <almazary@gmail.com>
+      *
      */
     public function update_field($id, $nama = null, $value = null)
     {
